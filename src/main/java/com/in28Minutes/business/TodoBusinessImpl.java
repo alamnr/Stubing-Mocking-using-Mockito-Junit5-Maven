@@ -26,4 +26,9 @@ public class TodoBusinessImpl {
     {
       return todoService.retrieveTodos(user).stream().filter(todo -> todo.contains("Spring")).collect(Collectors.toList());
     }
+
+    public void deleteTodosNotRelatedToSpring(String user) {
+        todoService.retrieveTodos(user).stream().filter(todo->!todo.contains("Spring")).collect(Collectors.toList())
+                .forEach(todo->todoService.deleteTodo(todo));
+    }
 }

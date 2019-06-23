@@ -10,4 +10,5 @@ import java.util.List;
 // Test TodoBusinessImpl using TodoServiceStub
 public interface TodoService {
     public List<String> retrieveTodos(String user);
+    void deleteTodo(String todo);
 }
